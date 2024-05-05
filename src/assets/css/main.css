@@ -44,10 +44,41 @@ Primary use:	FlixTV HTML Template
 34. Scrollbar-track
 35. Plyr
 ----------------------------------------*/
+
 /*==============================
 	Fonts
 ==============================*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Rubik:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap");
+
+
+.bg-none {
+  background: none !important;
+}
+
+.slick-arrow.slick-prev {
+  left: -5px !important;
+  z-index: 1;
+}
+.slick-arrow.slick-next {
+  right: -5px !important;
+  z-index: 1;
+}
+
+.slick-dots li button:before {
+  color: rgb(255, 255, 255) !important;
+}
+.slick-dots li.slick-active button:before {
+
+  color: orange !important;
+}
+
+.loading_vd {
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /*==============================
 	Common styles
 ==============================*/
@@ -60,7 +91,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 400;
   background-color: #131720;
   -webkit-font-smoothing: antialiased;

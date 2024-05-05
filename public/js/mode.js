@@ -1,0 +1,1 @@
+// $('.slick-list').addClass('row');
