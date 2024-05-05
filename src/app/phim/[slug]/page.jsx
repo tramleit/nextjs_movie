@@ -5,6 +5,8 @@ import Link from "next/link"
 import Test from "./components/test"
 import { useState, useEffect } from "react";
 
+
+
 export default function Page({ params }) {
 
      const [slug, setSlug] = useState(params.slug);
@@ -19,6 +21,7 @@ export default function Page({ params }) {
           setMovie(data.movie)
           setLoading(false)
           console.log(data.movie);
+          document.title = data.movie.name
      }
 
      useEffect(() => {
@@ -43,14 +46,14 @@ export default function Page({ params }) {
                               <div>
                                    <img src={movie.thumb_url} width="100%" alt={movie.name} className="rounded-2" style={{ objectFit: "cover" }} />
                               </div>
-                              
-                                   {movie.episodes.map((item, index) => (
-                                        <div key={index} className="mt-3 text-center">
-                                             {item.items.slice(0,1).map((tap, i) => (
-                                                  <a href={`/xem-phim/${movie.slug}?server=${encodeURIComponent(item.server_name)}&tap=${tap.name}`} className="btn btn-warning me-3" key={i}> Xem phim {item.server_name} </a>
-                                             ))}
-                                        </div>
-                                   ))}
+
+                              {movie.episodes.map((item, index) => (
+                                   <div key={index} className="mt-3 text-center">
+                                        {item.items.slice(0, 1).map((tap, i) => (
+                                             <a href={`/xem-phim/${movie.slug}?server=${encodeURIComponent(item.server_name)}&tap=${tap.name}`} className="btn btn-warning me-3" key={i}> Xem phim {item.server_name} </a>
+                                        ))}
+                                   </div>
+                              ))}
 
                          </div>
                          <div className="col-9">

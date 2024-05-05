@@ -3,6 +3,7 @@ import Script from "next/script";
 import Head from "next/head";
 import AppHeader from "@/components/layouts/header";
 import AppSearch from "@/components/template/search";
+import AppFooter from "@/components/layouts/footer";
 import "../assets/css/main.css";
 import "../assets/css/navbar.css";
 import "../assets/css/theme.min.css";
@@ -28,7 +29,8 @@ export default function RootLayout({ children }) {
         <main className="mt-17">
           <AppSearch />
           {children}
-          </main>
+        </main>
+        <AppFooter />
 
         <Script src="/js/jquery-3.5.1.slim.min.js" strategy="beforeInteractive" />
         <Script src="/js/bootstrap.bundle.min.js" strategy="beforeInteractive" />
