@@ -1,13 +1,10 @@
-import { useRouter } from 'next/router';
+import Test from "./components/test"
+export default function Page({ params }) {
 
-function Phim() {
-     // get params from url
-     const router = useRouter();
-     const { slug } = router.query;
-     console.log(slug);
-     return ( 
-          <div></div>
-     );
+     return (
+          <>
+               <Test />
+               {params.slug}
+          </>
+     )
 }
-
-export default Phim;

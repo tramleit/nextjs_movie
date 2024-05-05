@@ -1,12 +1,8 @@
-import { useRouter } from 'next/router';
 
-function XemPhim() {
-     // get params from url
-     const router = useRouter();
-     const { slug } = router.query;
-     console.log(slug);
+
+function XemPhim({ params }) {
      return ( 
-          <div></div>
+          <div>{params.slug}</div>
      );
 }
 
