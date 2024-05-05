@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
 
 
 
-        <Script src="/js/jquery-3.5.1.slim.min.js"  strategy="lazyOnload"/>
-        <Script src="/js/bootstrap.bundle.min.js"  strategy="lazyOnload"/>
-        <Script src="/js/bootstrap.min.js"  strategy="lazyOnload"/>
+        <Script src="/js/jquery-3.5.1.slim.min.js"  strategy="beforeInteractive"/>
+        <Script src="/js/bootstrap.bundle.min.js"  strategy="beforeInteractive"/>
+        <Script src="/js/bootstrap.min.js"  strategy="beforeInteractive"/>
       </body>
     </html>
   );
