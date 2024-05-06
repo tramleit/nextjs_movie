@@ -4,7 +4,6 @@ import Link from 'next/link';
 import style from './header.module.css';
 
 const AppHeader = () => {
-     console.log("AppHeader");
      return (
           <nav className="navbar navbar-expand-lg fixed-top">
                <div className="container">
@@ -17,21 +16,29 @@ const AppHeader = () => {
                          <div className="offcanvas-body">
                               <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                                    <li className="nav-item">
-                                        <a className={`nav-link nav-link-vd  mx-lg-2 fw`} aria-current="page" href="#">Trang chủ</a>
+                                        <a className={`nav-link nav-link-vd  mx-lg-2 fw`} aria-current="page" href="/">Trang chủ</a>
                                    </li>
                                    <li className="nav-item">
-                                        <a className="nav-link nav-link-vd  mx-lg-2" href="#">Phim Lẻ</a>
+                                        <a className="nav-link nav-link-vd  mx-lg-2" href="/danh-muc/phim-le">Phim Lẻ</a>
                                    </li>
                                    <li className="nav-item">
-                                        <a className="nav-link nav-link-vd mx-lg-2" href="#">Phim bộ</a>
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-bo">Phim bộ</a>
+                                   </li>
+                                   <li className="nav-item">
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-dang-chieu">Phim đang chiếu</a>
+                                   </li>
+                                   <li className="nav-item">
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/hoat-hinh">Hoạt hình</a>
+                                   </li>
+                                   <li className="nav-item">
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/tv-shows">TV Show</a>
                                    </li>
                                    <li className="nav-item dropdown">
                                         <a className="nav-link nav-link-vd  mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                              Thể loại
                                         </a>
                                         <ul className="dropdown-menu">
-                                             <li><a className="dropdown-item" href="#">Action</a></li>
-                                             <li><a className="dropdown-item" href="#">Another action</a></li>
+                                             <li><a className="dropdown-item" href="/the-loai/hanh-dong">Hành động</a></li>
                                         </ul>
                                    </li>
                                    <li className="nav-item dropdown">
@@ -39,8 +46,15 @@ const AppHeader = () => {
                                              Quốc gia
                                         </a>
                                         <ul className="dropdown-menu">
-                                             <li><a className="dropdown-item" href="#">Action</a></li>
-                                             <li><a className="dropdown-item" href="#">Another action</a></li>
+                                             <li><a className="dropdown-item" href="/quoc-gia/viet-name">Việt Nam</a></li>
+                                        </ul>
+                                   </li>
+                                   <li className="nav-item dropdown">
+                                        <a className="nav-link nav-link-vd mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             Năm
+                                        </a>
+                                        <ul className="dropdown-menu">
+                                             <li><a className="dropdown-item" href="/nam/2024">2024</a></li>
                                         </ul>
                                    </li>
                               </ul>

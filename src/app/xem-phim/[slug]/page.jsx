@@ -63,14 +63,13 @@ function XemPhim({ params }) {
                                    <li className="breadcrumb-item"><a href="/" className="text-warning fw">Trang chủ</a></li>
                                    <li className="breadcrumb-item"><Link href={`/phim/${movie.slug}`} className="text-warning fw">{movie.name}</Link></li>
                                    <li className="breadcrumb-item active" aria-current="page">Tập: {tap}</li>
-
                               </ol>
                          </nav>
                     </div>
                     <div className="card-body">
                          <div className="mb-4">
                               <div className="text-warning fw mb-2">
-                                   <strong><i className="fe fe-hash"></i>Tập 1</strong>
+                                   <strong><i className="fe fe-hash"></i>Tập {tap}</strong>
                               </div>
                               <div>
                                    <iframe src={tapPhim.embed} width="100%" height="500" frameborder="0"></iframe>
