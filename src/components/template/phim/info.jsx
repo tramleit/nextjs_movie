@@ -1,8 +1,10 @@
 'use client';
-
+import Image from "next/image";
 import { QRCode, Space } from "antd";
 
 const Info = ({ movie }) => {
+     const url = window.location.href;
+     console.log(url);
      return (
           <div className="mt-5">
                <div className="row">
@@ -70,7 +72,7 @@ const Info = ({ movie }) => {
                                                        <div className="d-flex justify-content-center mt-3">
                                                             <QRCode
                                                                  type="canvas"
-                                                                 value={window.location.href}
+                                                                 value={url}
                                                                  color={"#fff"}
                                                                  size={250}
                                                             />

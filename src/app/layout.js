@@ -1,7 +1,6 @@
 import Script from "next/script";
 import { Suspense } from "react";
 import AppHeader from "@/components/layouts/header";
-import AppSearch from "@/components/template/search";
 import AppFooter from "@/components/layouts/footer";
 import Loading from "@/components/layouts/loading";
 
@@ -19,7 +18,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const url = 'vudebweb.com';
-  // console.log(url);
   return (
     <html lang="vi" data-theme="dark">
 

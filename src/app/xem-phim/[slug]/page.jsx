@@ -1,5 +1,5 @@
 "use client"
-import Link from "next/link"
+
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -62,7 +62,7 @@ function XemPhim({ params }) {
                          <nav aria-label="breadcrumb text-start">
                               <ol className="breadcrumb justify-content-start">
                                    <li className="breadcrumb-item"><a href="/" className="text-warning fw">Trang chủ</a></li>
-                                   <li className="breadcrumb-item"><Link href={`/phim/${movie.slug}`} className="text-warning fw">{movie.name}</Link></li>
+                                   <li className="breadcrumb-item"><a href={`/phim/${movie.slug}`} className="text-warning fw">{movie.name}</a></li>
                                    <li className="breadcrumb-item active" aria-current="page">Tập: {tap}</li>
                               </ol>
                          </nav>
@@ -95,13 +95,13 @@ function XemPhim({ params }) {
                                         <div key={index}>
                                              <div className="text-warning text-center mb-2"> <strong>Server: </strong>{item.server_name}</div>
                                              {item.items.map((tapVip, i) => (
-                                                  <Link
+                                                  <a
                                                        key={i}
                                                        href={`/xem-phim/${movie.slug}?server=${encodeURIComponent(item.server_name)}&tap=${encodeURIComponent(tapVip.name)}`}
                                                        className={`btn btn-secondary me-3 mb-3 ${item.server_name === server && tapVip.name === tap ? 'btn btn-warning' : ''}`}
                                                   >
                                                        {tapVip.name}
-                                                  </Link>
+                                                  </a>
                                              ))}
                                         </div>
                                    ))}

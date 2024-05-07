@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import Search from '@/components/template/search';
 const Header = ( {countries, genres , years} ) => {
      
@@ -7,7 +6,7 @@ const Header = ( {countries, genres , years} ) => {
           <>
           <nav className="navbar navbar-expand-lg m-0 mt-3 nav_vd">
                <div className="container">
-                    <Link className="navbar-brand me-auto text-warning fw" style={{color: "orange"}} href="/">PhimMoi</Link>
+                    <a className="navbar-brand me-auto text-warning fw" style={{color: "orange"}} href="/">PhimMoi</a>
                     <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                          <div className="offcanvas-header">
                               <h5 className="offcanvas-title text-warning fw" id="offcanvasNavbarLabel">PhimMoi</h5>
@@ -16,33 +15,33 @@ const Header = ( {countries, genres , years} ) => {
                          <div className="offcanvas-body">
                               <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                                    <li className="nav-item">
-                                        <Link className={`nav-link nav-link-vd  mx-lg-2 fw`} aria-current="page" href="/">Trang chủ</Link>
+                                        <a className={`nav-link nav-link-vd  mx-lg-2 fw`} aria-current="page" href="/">Trang chủ</a>
                                    </li>
                                    <li className="nav-item">
-                                        <Link className="nav-link nav-link-vd  mx-lg-2" href="/danh-muc/phim-le">Phim Lẻ</Link>
+                                        <a className="nav-link nav-link-vd  mx-lg-2" href="/danh-muc/phim-le">Phim Lẻ</a>
                                    </li>
                                    <li className="nav-item">
-                                        <Link className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-bo">Phim bộ</Link>
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-bo">Phim bộ</a>
                                    </li>
                                    <li className="nav-item">
-                                        <Link className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-dang-chieu">Phim đang chiếu</Link>
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/phim-dang-chieu">Phim đang chiếu</a>
                                    </li>
                                    <li className="nav-item">
-                                        <Link className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/hoat-hinh">Hoạt hình</Link>
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/hoat-hinh">Hoạt hình</a>
                                    </li>
                                    <li className="nav-item">
-                                        <Link className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/tv-shows">TV Show</Link>
+                                        <a className="nav-link nav-link-vd mx-lg-2" href="/danh-muc/tv-shows">TV Show</a>
                                    </li>
 
                                    {/* thể loại */}
                                    <li className="nav-item dropdown">
-                                        <Link className="nav-link nav-link-vd  mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <animate className="nav-link nav-link-vd  mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                              Thể loại
-                                        </Link>
+                                        </animate>
                                         <ul className="dropdown-menu menu-scroll">
                                              {genres.map((genre, index) => (
                                                   <li key={index}>
-                                                       <Link className="dropdown-item" href={`/the-loai/${genre.slug}`}>{genre.title}</Link>
+                                                       <a className="dropdown-item" href={`/the-loai/${genre.slug}`}>{genre.title}</a>
                                                   </li>
                                              ))}
                                         </ul>
@@ -51,13 +50,13 @@ const Header = ( {countries, genres , years} ) => {
                                    {/* quốc gia */}
                                    <li className="nav-item dropdown">
                                         
-                                        <Link className="nav-link nav-link-vd mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a className="nav-link nav-link-vd mx-lg-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                              Quốc gia
-                                        </Link>
+                                        </a>
                                         <ul className="dropdown-menu menu-scroll">
                                              {countries.map((country, index) => (
                                                   <li key={index}>
-                                                       <Link className="dropdown-item" href={`/quoc-gia/${country.slug}`}>{country.title}</Link>
+                                                       <a className="dropdown-item" href={`/quoc-gia/${country.slug}`}>{country.title}</a>
                                                   </li>
                                              ))}
                                         </ul>
@@ -71,7 +70,7 @@ const Header = ( {countries, genres , years} ) => {
                                         <ul className="dropdown-menu menu-scroll">
                                              {years.map((year, index) => (
                                                   <li key={index}>
-                                                       <Link className="dropdown-item" href={`/nam-phat-hanh/${year}`}>{year}</Link>
+                                                       <a className="dropdown-item" href={`/nam-phat-hanh/${year}`}>{year}</a>
                                                   </li>
                                              ))}
                                         </ul>
