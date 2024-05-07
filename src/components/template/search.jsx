@@ -1,18 +1,24 @@
 // client/AppSearch.jsx
 'use client'
-
+import { useRouter } from "next/navigation";
 function AppSearch() {
+     const router = useRouter();
      const handleSearch = (e) => {
           e.preventDefault();
-          alert('Đã tìm kiếm');
+          const search = e.target[0].value;
+          //Xóa dấu tiếng việt
+          const searchParams = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+          if(searchParams === '') alert ('Vui lòng nhập tên phim cần tìm');
+          router.push(`/tim-kiem?q=${searchParams}`)
+          // window.location.href=`/tim-kiem?q=${e.target[0].value}`;
      };
 
      return (
           <div className="collapse search_vd" id="tim_kiem">
-               <div className="container">
-                    <div className="row align-items-center">
-                         <div className="col-md-11 col-10">
-                              <div className="py-4">
+               <div className="container ">
+                    <div className="row">
+                         <div className="col-md-12 col-10 ">
+                              <div className="py-4 pb-0">
                                    <form onSubmit={handleSearch} className="d-flex align-items-center">
                                         <span className="position-absolute ps-3">
                                              <i className="fe fe-search text-muted" />

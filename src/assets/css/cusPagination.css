@@ -1,0 +1,25 @@
+.ant-pagination-item-link {
+     color: white !important;
+}
+.ant-pagination-item-active {
+     background-color: orange !important;
+     border-color: rgb(255, 255, 255) !important;
+     color: white !important;
+}
+
+.anticon  {
+     color: white !important;
+}
+.ant-pagination-options {
+     display: none !important;
+}
+.ant-pagination-item-ellipsis {
+     color: white !important;
+}
+.ant-breadcrumb-separator, .ant-breadcrumb-link {
+     color: white !important;
+}
+.nav-link.active {
+     color:  orange !important;
+     font-weight: bold;
+}

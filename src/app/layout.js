@@ -10,6 +10,7 @@ import "@/assets/css/navbar.css";
 import "@/assets/css/theme.min.css";
 import "@/assets/feather/feather.css";
 import "@/assets/css/owl.carousel.min.css";
+import "@/assets/css/cusPagination.css";
 
 export const metadata = {
   title: "Xem phim online miễn phí",
@@ -25,8 +26,7 @@ export default function RootLayout({ children }) {
       <body className="container">
         <Suspense fallback={<Loading />}>
           <AppHeader />
-          <AppSearch />
-          <main className="mt-17">
+          <main className="mt-3">
             {children}
           </main>
           <AppFooter />

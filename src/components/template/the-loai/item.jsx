@@ -1,51 +1,29 @@
-'use client'
-
+'use client';
 import React from 'react';
-import Slider from "react-slick";
 import Link from 'next/link';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Pagination } from 'antd';
+import { useState, useEffect } from 'react';
+function Item({ movies, paginate }) {
 
-function Item({ movies, categoryTitle }) {
+     const [page, setPage] = useState(paginate.current_page);
+     const [totalPage, setTotalPage] = useState(paginate.total_page);
+     console.log(totalPage);
+     console.log(paginate.total_page);
 
-     const settings = {
-          dots: true,
-          infinite: true,
-          slidesToShow: 6,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          pauseOnHover: true,
-          responsive: [
-               {
-                    breakpoint: 1024,
-                    settings: {
-                         slidesToShow: 4,
-                    },
-               },
-               {
-                    breakpoint: 768,
-                    settings: {
-                         slidesToShow: 3,
-                    },
-               },
-               {
-                    breakpoint: 480,
-                    settings: {
-                         slidesToShow: 2,
-                    },
-               },
-          ],
-     };
+     useEffect(() => {
+          setTotalPage(paginate.total_page);
+     }, [paginate.total_page]);
+
+     const handlePage = (page) => {
+          setPage(page);
+          window.location.href = `?page=${page}`;
+     }
 
      return (
-          <div className="slider-container mt-6">
-               <div className="title fw text-warning">
-                    <i className="fe fe-hash"></i><span> {categoryTitle} </span>
-               </div>
-               <Slider {...settings} className="row">
+          <>   
+               <div className="row">
                     {movies.map((movie, index) => (
-                         <div key={index} className="col-6 col-sm-4 col-lg-3 col-xl-2 ">
+                         <div key={index} className="col-6 col-sm-4 col-lg-3 col-xl-2">
                               <div className="card text-center bg-none mt-1" style={{ padding: 10 }}>
                                    <Link href={`/phim/${movie.slug}`} className="card__cover">
                                         <img loading="lazy" src={movie.thumb_url} alt={movie.name} height={265} />
@@ -57,8 +35,17 @@ function Item({ movies, categoryTitle }) {
                               </div>
                          </div>
                     ))}
-               </Slider>
-          </div>
+               </div>
+               <div className='text-center mt-5'>
+                    <Pagination 
+                         defaultCurrent={1}
+                         total={100} 
+                         current={page}
+                         onChange={handlePage}
+                         style={{ color: "orange" }}
+                    />
+               </div>
+          </>
      );
 }
 

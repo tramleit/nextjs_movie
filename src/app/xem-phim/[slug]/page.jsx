@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+
 import Comment from "./comment";
 function XemPhim({ params }) {
      const searchParams = useSearchParams();
@@ -72,7 +73,14 @@ function XemPhim({ params }) {
                                    <strong><i className="fe fe-hash"></i>Tập {tap}</strong>
                               </div>
                               <div>
-                                   <iframe src={tapPhim.embed} width="100%" height="500" frameborder="0"></iframe>
+                                   <iframe 
+                                        loading="lazy"
+                                        title={tapPhim.name}
+                                        allowfullscreen 
+                                        src={tapPhim.embed} 
+                                        width="100%" 
+                                        height="500" 
+                                        frameborder="0"></iframe>
                               </div>
                          </div>
 

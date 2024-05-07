@@ -1,12 +1,7 @@
 import Item from '@/components/template/the-loai/item';
 
-export const metadata = {
-     title: "Thể loại phim",
-     description: "Phimmoi ⚡ Phim HD VietSub | Phim Lẻ | Phim Bộ | Phim Chiếu Rạp | Xem phim Online miễn phí",
-};
-
-const TheLoai = async ({ params, searchParams }) => {
-     const api = "https://phim.nguonc.com/api/films/the-loai/"
+const NamPhatHanh = async ({ params, searchParams }) => {
+     const api = "https://phim.nguonc.com/api/films/nam-phat-hanh/"
      const slug = params.slug;
      const page = searchParams.page || 1;
      const res = await fetch(`${api + slug}?page=${page}`);
@@ -16,10 +11,10 @@ const TheLoai = async ({ params, searchParams }) => {
 
      return ( 
           <>
-               Thể loại:  {slug}
+               Năm phát hành:  {slug}
                <Item movies={movies} paginate={paginate}/>
           </>
      );
 }
 
-export default TheLoai
+export default NamPhatHanh
