@@ -1,5 +1,5 @@
 'use client';
-import CardMovie from '../../../components/template/cardMovie';
+import CardMovie from '@/components/template/cardMovie';
 import { useEffect, useState } from "react";
 function DanhMuc({ params }) {
      const slug = params.slug;

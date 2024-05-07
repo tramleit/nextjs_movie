@@ -1,10 +1,12 @@
+'use client'
+
 import React from 'react';
 import Slider from "react-slick";
 import Link from 'next/link';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function DanhMucPhim({ movies, categoryTitle }) {
+function Item({ movies, categoryTitle }) {
 
      const settings = {
           dots: true,
@@ -18,24 +20,23 @@ function DanhMucPhim({ movies, categoryTitle }) {
                {
                     breakpoint: 1024,
                     settings: {
-                         slidesToShow: 3,
+                         slidesToShow: 4,
                     },
                },
                {
                     breakpoint: 768,
                     settings: {
-                         slidesToShow: 2,
+                         slidesToShow: 3,
                     },
                },
                {
                     breakpoint: 480,
                     settings: {
-                         slidesToShow: 1,
+                         slidesToShow: 2,
                     },
                },
           ],
      };
-
 
      return (
           <div className="slider-container mt-6">
@@ -61,4 +62,4 @@ function DanhMucPhim({ movies, categoryTitle }) {
      );
 }
 
-export default DanhMucPhim;
+export default Item;

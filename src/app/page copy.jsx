@@ -1,12 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import Image from "next/image";
-import styles from "./page.module.css";
-import Slider from "react-slick";
 import DanhMucPhim from "@/components/template/danhMuc"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -20,42 +16,42 @@ export default function Home() {
 
 
   const getNewPhim = async () => {
-    const res = await fetch(`https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=2`);
+    const res = await fetch(`https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=1`);
     const data = await res.json()
     setNewMovie(data.items)
     setLoading(false);
   }
 
   const getPhimLe = async () => {
-    const res = await fetch('https://phim.nguonc.com/api/films/danh-sach/phim-le?page=2')
+    const res = await fetch('https://phim.nguonc.com/api/films/danh-sach/phim-le?page=1')
     const data = await res.json()
     setPhimLe(data.items)
     setLoading(false)
   }
 
   const getPhimBo = async () => {
-    const res = await fetch('https://phim.nguonc.com/api/films/danh-sach/phim-bo?page=2')
+    const res = await fetch('https://phim.nguonc.com/api/films/danh-sach/phim-bo?page=1')
     const data = await res.json()
     setPhimBo(data.items)
     setLoading(false)
   }
 
   const getHoatHinh = async () => {
-    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/hoat-hinh?page=2`)
+    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/hoat-hinh?page=1`)
     const data = await res.json()
     setPhimHoatHinh(data.items)
     setLoading(false)
   }
 
   const getPhimDangChieu = async () => {
-    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/phim-dang-chieu?page=2`);
+    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/phim-dang-chieu?page=1`);
     const data = await res.json()
     setPhimDangChieu(data.items)
     setLoading(false)
   }
 
   const getTvShow = async () => {
-    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/tv-shows?page=2`)
+    const res = await fetch(`https://phim.nguonc.com/api/films/danh-sach/tv-shows?page=1`)
     const data = await res.json()
     setTvShow(data.items)
     setLoading(false)
