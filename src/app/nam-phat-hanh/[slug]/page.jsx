@@ -1,4 +1,4 @@
-import Item from '@/components/template/the-loai/item';
+import Item from '@/components/page/the-loai/item';
 
 const NamPhatHanh = async ({ params, searchParams }) => {
      const api = "https://phim.nguonc.com/api/films/nam-phat-hanh/"

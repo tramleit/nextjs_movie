@@ -1,4 +1,4 @@
-import Item from '@/components/template/the-loai/item';
+import Item from '@/components/page/the-loai/item';
 
 const QuocGia = async ({ params, searchParams }) => {
      const api = "https://phim.nguonc.com/api/films/quoc-gia/"

@@ -1,4 +1,4 @@
-import Item from '@/components/template/the-loai/item';
+import Item from '@/components/page/the-loai/item';
 
 export const metadata = {
      title: "Thể loại phim",

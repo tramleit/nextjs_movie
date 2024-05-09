@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import Item from "@/components/template/home/item";
+
+import Item from "@/components/page/home/item";
 
 const Home = async () => {
 const api = "https://phim.nguonc.com/api/films/"

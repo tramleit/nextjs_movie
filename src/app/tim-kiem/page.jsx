@@ -1,4 +1,4 @@
-import Item from "@/components/template/tim-kiem/item";
+import Item from "@/components/page/tim-kiem/item";
 
 const Page = async ({ searchParams }) => {
      const api = "https://phim.nguonc.com/api/films/search?keyword="

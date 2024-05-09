@@ -41,7 +41,7 @@ const Header = ( {countries, genres , years} ) => {
                                         <ul className="dropdown-menu menu-scroll">
                                              {genres.map((genre, index) => (
                                                   <li key={index}>
-                                                       <a className="dropdown-item" href={`/the-loai/${genre.slug}`}>{genre.title}</a>
+                                                       <a className="dropdown-item" href={`/the-loai/${genre.slug}`}>{genre.name}</a>
                                                   </li>
                                              ))}
                                         </ul>
@@ -56,7 +56,7 @@ const Header = ( {countries, genres , years} ) => {
                                         <ul className="dropdown-menu menu-scroll">
                                              {countries.map((country, index) => (
                                                   <li key={index}>
-                                                       <a className="dropdown-item" href={`/quoc-gia/${country.slug}`}>{country.title}</a>
+                                                       <a className="dropdown-item" href={`/quoc-gia/${country.slug}`}>{country.name}</a>
                                                   </li>
                                              ))}
                                         </ul>

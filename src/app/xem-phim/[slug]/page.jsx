@@ -72,16 +72,18 @@ function XemPhim({ params }) {
                               <div className="text-warning fw mb-2">
                                    <strong><i className="fe fe-hash"></i>Tập {tap}</strong>
                               </div>
-                              <div>
-                                   <iframe 
+                              <div style={{ position: 'relative', paddingBottom: '56.25%' }}>
+                                   <iframe
+                                        controls
                                         loading="lazy"
                                         title={tapPhim.name}
-                                        allowfullscreen 
-                                        src={tapPhim.embed} 
-                                        width="100%" 
-                                        height="500" 
-                                        frameborder="0"></iframe>
+                                        allowfullscreen
+                                        src={tapPhim.embed}
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                                        frameborder="0">
+                                   </iframe>
                               </div>
+
                          </div>
 
                          <hr />

@@ -10,21 +10,19 @@ const AppHeader = () => {
 
      useEffect(() => {
           const fetchData = async () => {
-               // const api = 'https://phim.nguonc.com/api/';
+               const api = 'https://phimapi.com/';
 
-               // const getData = async (url) => {
-               //      const res = await fetch(url);
-               //      const data = await res.json();
-               //      return data;
-               // }
+               const getData = async (url) => {
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    return data;
+               }
 
-               // const allC = await getData(`${api}quoc-gia`);
-               // const allG = await getData(`${api}the-loai`);
-               // console.log(allG);
+               const allC = await getData(`${api}quoc-gia`);
+               const allG = await getData(`${api}the-loai`);
                const years = getYear();
-
-               // setCountries(allC);
-               // setGenres(allG);
+               setCountries(allC);
+               setGenres(allG);
                setYears(years);
 
           };
